@@ -12,6 +12,7 @@ public class Gestor_de_tareas {
         String descripcion;
         int estado;
 
+
         System.out.println("Ingrese la descripción de la tarea:");
         descripcion = consola.nextLine();
         System.out.println("Ingrese el estado de la tarea siendo 0 (Estado Pendiente) 1 (Estado Completada)");
@@ -27,36 +28,28 @@ public class Gestor_de_tareas {
         int indice = 0;
 
         for (Tarea tarea : listaDeTareas) {
-            System.out.println(indice);
+            System.out.println(indice + "-" + tarea);
             indice++;
-            System.out.println(tarea);
         }
     }
 
     // Completar tarea
-    public void mostrarTarea() {
+    public void completarTarea() {
 
         int indice = 0;
 
-        System.out.println("Ingrese el numero que le corresponda a la tarea que desee marcar como completada\n");
+        System.out.println("Ingrese el numero que le corresponda a la tarea que desee marcar como completada");
         indice = consola.nextInt();
-        listaDeTareas.get(indice).estado = 0;
+        listaDeTareas.get(indice).estado = 1;
 
-        System.out.println("El estado de la tarea se a midificado con exito" + listaDeTareas.get(indice));
+        System.out.println("El estado de la tarea se a modificado con exito" + listaDeTareas.get(indice));
 
     }
 
     // Eliminar tareas completadas
     public void eliminarTareasCompletadas() {
 
-        for (Tarea tarea : listaDeTareas) {
-
-            if (tarea.getEstado() == 0) {
-                listaDeTareas.remove(tarea);
-
-            }
-
-        }
+        listaDeTareas.removeIf(t -> t.getEstado() == 1);
 
         System.out.println("Las tareas completadas se eliminaron con exito\n");
 

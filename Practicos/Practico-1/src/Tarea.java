@@ -3,14 +3,13 @@ public class Tarea {
     int estado;
     String descripcion;
 
-
-    //Constructor
+    // Constructor
     public Tarea(int estado, String descripcion) {
         this.estado = estado;
         this.descripcion = descripcion;
     }
 
-    //Getters y Setters
+    // Getters y Setters
     public int getEstado() {
         return estado;
     }
@@ -27,7 +26,7 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    //ToString
+    // ToString
     @Override
     public String toString() {
         return "Tarea{" +
@@ -35,6 +34,5 @@ public class Tarea {
                 ", Descripcion='" + descripcion + '\'' +
                 '}';
     }
-
 
 }
