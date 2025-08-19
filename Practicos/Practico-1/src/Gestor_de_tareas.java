@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class Gestor_de_tareas {
@@ -53,6 +58,37 @@ public class Gestor_de_tareas {
 
         System.out.println("Las tareas completadas se eliminaron con exito\n");
 
+    }
+
+    // Guardar tareas en archivo
+    public void guardarEnArchivo(String nombreArchivo) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(nombreArchivo))) {
+            for (Tarea t : listaDeTareas) {
+                pw.println(t.getEstado() + ";" + t.getDescripcion());
+            }
+            System.out.println("Tareas guardadas en archivo.");
+        } catch (IOException e) {
+            System.out.println("Error al guardar: " + e.getMessage());
+        }
+    }
+
+    // Cargar tareas desde archivo
+    public void cargarDesdeArchivo(String nombreArchivo) {
+        listaDeTareas.clear();
+        try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(";", 2);
+                if (partes.length == 2) {
+                    int estado = Integer.parseInt(partes[0]);
+                    String descripcion = partes[1];
+                    listaDeTareas.add(new Tarea(estado, descripcion));
+                }
+            }
+            System.out.println("Tareas cargadas desde archivo.");
+        } catch (IOException e) {
+            System.out.println("No se pudieron cargar tareas: " + e.getMessage());
+        }
     }
 
 }
