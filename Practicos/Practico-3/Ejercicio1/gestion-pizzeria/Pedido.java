@@ -1,4 +1,3 @@
-package Ejercicio1;
 
 public class Pedido {
     
@@ -15,6 +14,34 @@ public class Pedido {
         nombreCliente = nombre;
         this.estado = estado;
     }
+
+    // Getters y Setters
+    public int getTiempoDePreparacion() {
+        return tiempoPreparacion;
+    }
+    public int getPrecioTotal() {
+        return precioTotal;
+    }
+    public String getNombreCliente() {
+        return nombreCliente;
+    }   
+    public int getEstado() {
+    return estado;
+    }
+
+    
+    public void setTiempoDePreparacion(int tiempoPreparacion) {
+    this.tiempoPreparacion = tiempoPreparacion;
+    }
+    public void setPrecioTotal(int precioTotal) {
+    this.precioTotal = precioTotal;
+    }
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }   
 
     //toString
     public String toString(){

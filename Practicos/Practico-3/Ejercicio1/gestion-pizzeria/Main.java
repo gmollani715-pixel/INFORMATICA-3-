@@ -1,4 +1,3 @@
-package Ejercicio1;
 
 import java.util.*;
 
@@ -6,6 +5,10 @@ public class Main {
     
     public static void main(String[] args) {
         
+        Pizzeria pizzeria = new Pizzeria();
+        Ordenador ordenador = new Ordenador();
+        TiempoOrdenamiento tiempoOrdenamiento = new TiempoOrdenamiento();
+
         Scanner consola = new Scanner(System.in);
 
         int condicion = 0;
@@ -27,25 +30,32 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    // Ingresar nuevo pedido
+                    pizzeria.AgregarPedido();
                     break;
                 case 2:
-                    // Eliminar pedidos completados
+                    pizzeria.EliminarPedidosCompletados();
                     break;
                 case 3:
-                    // Actualizar informacion de pedidos
+                    pizzeria.MostrarPedidos();
+                    pizzeria.ActualizarPedidos();
                     break;
                 case 4:
-                    // Ordenar pedidos por tiempo de preparacion
+                    tiempoOrdenamiento.TimepoDeInicio();
+                    ordenador.ordenarPorTiempoInsercion(pizzeria.listaPedidos);
+                    tiempoOrdenamiento.TiempoDeFinalizacion();
                     break;
                 case 5:
-                    // Ordenar pedidos por precio total
+                    tiempoOrdenamiento.TimepoDeInicio();
+                    ordenador.ordenarPorPrecioShellsort(pizzeria.listaPedidos);
+                    tiempoOrdenamiento.TiempoDeFinalizacion();
                     break;
                 case 6:
-                    // Ordenar pedidos por nombre de cliente
+                    tiempoOrdenamiento.TimepoDeInicio();
+                    ordenador.ordenarPorNombreQuicksort(pizzeria.listaPedidos);
+                    tiempoOrdenamiento.TiempoDeFinalizacion();
                     break;
                 case 7:
-                    // Capturar tiempo de ordenamiento
+                    tiempoOrdenamiento.MostrarResultados();
                     break;
                 case 8:
                     condicion = 1;
