@@ -1,6 +1,6 @@
-package Ejercicio1;
+package Ejercicio4;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class EntradaNumerica {
 

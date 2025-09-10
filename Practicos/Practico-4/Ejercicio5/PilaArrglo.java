@@ -1,4 +1,5 @@
-package Ejercicio3;
+package Ejercicio5;
+
 
 public class PilaArrglo {
 
@@ -38,19 +39,10 @@ public class PilaArrglo {
         return eliminado;
     }
 
-    // Método para ver la letra de la cima de la pila
-    public String top() {
-        if (isEmpty(0)) {
-            return null;
-        }
-        System.out.println("El último elemento agregado es: " + arreglo[top]);
-        return arreglo[top];
-    }
-
     // Método que verifica si la pila está vacía
     public boolean isEmpty(int opcion) {
         if (top == -1) {
-            System.out.println("La pila está vacía");
+            System.out.println("--La pila está vacía-");
             return true;
         } 
         if (opcion != 0) {
@@ -73,33 +65,4 @@ public class PilaArrglo {
         return false;
     }
 
-    //Metodo que invierte una cadena
-    public void invertirCadena() {
-        if (isEmpty(0)) {
-            return;
-        }
-        String arregloAux [] = new String[capacidad];
-
-        int j = 0;
-
-        for(int i = top; i >= 0; i--){
-
-            arregloAux[j] = arreglo[i];
-
-            j++;
-        }
-
-        for(int i = 0; i <= top; i++){
-
-            arreglo[i] = arregloAux[i];
-
-        }
-
-        System.out.println("Se invirtió la cadena");
-        System.out.println("Cadena invertida: ");
-        for(int i = 0; i < capacidad; i++){
-            System.out.print(arreglo[i]);       
-        }
-        System.out.println("\n");
-    }
 }

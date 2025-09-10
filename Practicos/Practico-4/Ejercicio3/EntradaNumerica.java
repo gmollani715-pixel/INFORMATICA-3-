@@ -1,44 +1,44 @@
-import java.util.Scanner;
+package Ejercicio3;
 
-public final class EntradaNumerica {
+import java.util.*;
 
-    private EntradaNumerica() { } // evitar instanciación
+public class EntradaNumerica {
 
-    /** Lee un entero (int). Si se ingresa letra/símbolo, muestra advertencia y vuelve a pedir. */
+    // Lee un número entero seguro
     public static int leerEntero(Scanner sc, String mensaje) {
         while (true) {
-            if (mensaje != null && !mensaje.isBlank()) System.out.print(mensaje);
+            System.out.print(mensaje);
             String linea = sc.nextLine().trim();
             try {
                 return Integer.parseInt(linea);
             } catch (NumberFormatException e) {
-                System.out.println("⚠️ Entrada inválida: se esperaba un número entero (int). No ingrese letras ni símbolos. Intente nuevamente.");
+                System.out.println(" Entrada inválida. Ingrese un número entero.");
             }
         }
     }
 
-    /** Lee un entero largo (long). */
+    // Lee un número largo
     public static long leerEnteroLargo(Scanner sc, String mensaje) {
         while (true) {
-            if (mensaje != null && !mensaje.isBlank()) System.out.print(mensaje);
+            System.out.print(mensaje);
             String linea = sc.nextLine().trim();
             try {
                 return Long.parseLong(linea);
             } catch (NumberFormatException e) {
-                System.out.println("⚠️ Entrada inválida: se esperaba un número entero largo (long). Intente nuevamente.");
+                System.out.println(" Entrada inválida. Ingrese un número entero largo (long).");
             }
         }
     }
 
-    /** Lee un real (double). Acepta coma o punto decimal. */
+    // Lee un número real (acepta , o . como separador decimal)
     public static double leerReal(Scanner sc, String mensaje) {
         while (true) {
-            if (mensaje != null && !mensaje.isBlank()) System.out.print(mensaje);
+            System.out.print(mensaje);
             String linea = sc.nextLine().trim().replace(',', '.');
             try {
                 return Double.parseDouble(linea);
             } catch (NumberFormatException e) {
-                System.out.println("⚠️ Entrada inválida: se esperaba un número real (double). Use solo números y separador decimal. Intente nuevamente.");
+                System.out.println(" Entrada inválida. Ingrese un número real (double).");
             }
         }
     }

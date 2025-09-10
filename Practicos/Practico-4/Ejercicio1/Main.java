@@ -2,6 +2,7 @@
 Implemente una clase PilaArreglo en Java utilizando un arreglo.
 Métodos: push(int dato), pop(), top(), isEmpty(), isFull().
 Pruebe apilando los enteros 10, 20, 30, 40 y desapilando dos.*/
+package Ejercicio1;
 
 import java.util.*;
 
@@ -23,12 +24,12 @@ public class Main {
         System.out.println("4- Ver si la pila esta vacia");
         System.out.println("5- Ver si la pila esta llena");
         System.out.println("6- Salir");
-        int opcion = EntradaNumerica.leerEntero(consola, null);
+        int opcion = EntradaNumerica.leerEntero(consola,"");
 
             switch (opcion) {
                 case 1:
                     System.out.println("Ingrese el numero que desea apilar");
-                    int numero = EntradaNumerica.leerEntero(consola, null);
+                    int numero = EntradaNumerica.leerEntero(consola,"");
                     arreglo.push(numero);
                     break;
                 case 2:

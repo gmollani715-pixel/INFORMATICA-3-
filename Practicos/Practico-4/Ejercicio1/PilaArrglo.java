@@ -1,3 +1,4 @@
+package Ejercicio1;
 
 public class PilaArrglo {
 
@@ -34,6 +35,7 @@ public class PilaArrglo {
 
     }
 
+    //Metodo que verifica el ultimo elemento agregado a la pila
     public void top(){
 
        if(isEmpty()){
@@ -44,28 +46,27 @@ public class PilaArrglo {
 
     }
 
+    //Metodo que verifica si la pila esta vacia
     public boolean isEmpty(){
 
         if(top == -1){
 
             System.out.println("La pila esta vacia");
             return true;
-        }else{
-            System.out.println("La pila no esta vacia");
-            return false;
         }
-
+        System.out.println("La pila no esta vacia");
+        return  false;
     }
 
+    //Metodo que verifica si la pila esta llena
     public boolean isFull(){
 
         if(top == 5){
             System.out.println("La pila esta llena");
             return true;
-        }else{
-            System.out.println("La pila no esta llena");
-            return false;
         }
+        System.out.println("La pila no esta llena");
+        return false;
 
     }
 
